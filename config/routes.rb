@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  get 'items/create'
 
-  get 'users/show'
+  devise_for :users
 
   get 'welcome/index'
 
-  root 'users#show'
+  authenticated :user do
+   root 'users#show', as: :authenticated_root
+  end
+
+  resources :users, only: [:show]
+  resources :items
+
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
