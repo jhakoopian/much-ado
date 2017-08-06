@@ -1,0 +1,15 @@
+<h2>To-Do Items</h2>
+<div class="row">
+  <div class="col-md-10">
+    <table class="table table-striped">
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item.name %></td>
+            <td><%= link_to "Done", item, method: :delete, class: 'btn btn-warning', data: {confirm: 'Are you got this done?'} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

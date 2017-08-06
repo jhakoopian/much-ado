@@ -22,3 +22,9 @@
   float: right;
   padding-top: 10px;
 }
+
+@media only screen and (max-width: 500px) {
+  nav {
+    font-size: 10px;
+  }
+}
