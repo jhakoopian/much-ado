@@ -6,6 +6,7 @@
         <% @items.each do |item| %>
           <tr>
             <td><%= item.name %></td>
+            <td><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) + " left"%></td>
             <td><%= link_to "Done", item, method: :delete, class: 'btn btn-warning', data: {confirm: 'Are you got this done?'} %></td>
           </tr>
         <% end %>
